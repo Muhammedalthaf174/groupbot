@@ -494,7 +494,7 @@ def yurikorobot_about_callback(update, context):
         query.message.edit_text(
             text=f"*Let's Make Your Group Bit Effective Now*"
             
-            f"\n✗ `Congragulations, tezza_groupBot now ready to manage your group.`"
+            f"\n✗ `Congragulations, tezza now ready to manage your group.`"
             f"\n\n*Admin Tools*"
             f"\n✗ `Basic Admin tools help you to protect and powerup your group.`"
             f"\n✗ `You can ban members, Kick members, Promote someone as admin through commands of bot.`"
@@ -560,7 +560,7 @@ def Source_about_callback(update, context):
     query = update.callback_query
     if query.data == "source_":
         query.message.edit_text(
-            text=""" Hi..😻 I'm *yurikorobot*
+            text=""" Hi..😻 I'm *tezza_groupBot*
                  \nHere is the [🔥Source Code🔥](https://github.com/TeamDeeCode) .""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
