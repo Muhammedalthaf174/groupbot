@@ -95,7 +95,7 @@ def kuki(update: Update, context: CallbackContext):
 
 def kuki_message(context: CallbackContext, message):
     reply_message = message.reply_to_message
-    if message.text.lower() == "kuki":
+    if message.text.lower() == "Tezza":
         return True
     if reply_message:
         if reply_message.from_user.id == context.bot.get_me().id:
@@ -108,8 +108,8 @@ def chatbot(update: Update, context: CallbackContext):
     message = update.effective_message
     chat_id = update.effective_chat.id
     bot = context.bot
-    is_kuki = sql.is_kuki(chat_id)
-    if not is_kuki:
+    is_kuki = sql.is_Tezza(chat_id)
+    if not is_Tezza:
         return
 	
     if message.text and not message.document:
@@ -117,11 +117,11 @@ def chatbot(update: Update, context: CallbackContext):
             return
         Message = message.text
         bot.send_chat_action(chat_id, action="typing")
-        kukiurl = requests.get('https://www.kukiapi.xyz/api/apikey=KUKIg76Fg4EIo/botname/owner/message='+Message)
-        Kuki = json.loads(kukiurl.text)
-        kuki = Kuki['reply']
+        kukiurl = requests.get('https://www.Tezzaapi.xyz/api/apikey=KUKIg76Fg4EIo/botname/owner/message='+Message)
+        Kuki = json.loads(Tezzaurl.text)
+        kuki = Tezza['reply']
         sleep(0.3)
-        message.reply_text(kuki, timeout=60)
+        message.reply_text(Tezza, timeout=60)
 
 def list_all_chats(update: Update, context: CallbackContext):
     chats = sql.get_all_kuki_chats()
@@ -138,19 +138,19 @@ def list_all_chats(update: Update, context: CallbackContext):
     update.effective_message.reply_text(text, parse_mode="HTML")
 
 __help__ = """
-✗ `Chatbot utilizes the` *YURIKO* `api which allows Yuriko to talk and provide a more interactive group chat experience.`
+✗ `Chatbot utilizes the` *Tezza* `api which allows Tezza to talk and provide a more interactive group chat experience.`
 
 *Admins only Commands*:
  
 ✗ /Chatbot - `Shows chatbot control panel`
   
-*✗ Pᴏᴡᴇʀᴇᴅ 💕 Bʏ: Tᴇᴀᴍ DᴇCᴏᴅᴇ!*
+*✗ Pᴏᴡᴇʀᴇᴅ 💕 Bʏ: ᴛᴇᴢᴢᴀ ʙᴏᴛ!*
 """
 
 __mod_name__ = "CʜᴀᴛBᴏᴛ"
 
 
-CHATBOTK_HANDLER = CommandHandler("chatbot", kuki)
+CHATBOTK_HANDLER = CommandHandler("chatbot", Tezza)
 ADD_CHAT_HANDLER = CallbackQueryHandler(kukiadd, pattern=r"add_chat")
 RM_CHAT_HANDLER = CallbackQueryHandler(kukirm, pattern=r"rm_chat")
 CHATBOT_HANDLER = MessageHandler(
