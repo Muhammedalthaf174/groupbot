@@ -95,7 +95,7 @@ def kuki(update: Update, context: CallbackContext):
 
 def kuki_message(context: CallbackContext, message):
     reply_message = message.reply_to_message
-    if message.text.lower() == "Tezza":
+    if message.text.lower() == "kuki":
         return True
     if reply_message:
         if reply_message.from_user.id == context.bot.get_me().id:
@@ -108,7 +108,7 @@ def chatbot(update: Update, context: CallbackContext):
     message = update.effective_message
     chat_id = update.effective_chat.id
     bot = context.bot
-    is_kuki = sql.is_Tezza(chat_id)
+    is_kuki = sql.is_kuki(chat_id)
     if not is_Tezza:
         return
 	
@@ -117,7 +117,7 @@ def chatbot(update: Update, context: CallbackContext):
             return
         Message = message.text
         bot.send_chat_action(chat_id, action="typing")
-        kukiurl = requests.get('https://www.Tezzaapi.xyz/api/apikey=KUKIg76Fg4EIo/botname/owner/message='+Message)
+        kukiurl = requests.get('https://www.kukiapi.xyz/api/apikey=KUKIg76Fg4EIo/botname/owner/message='+Message)
         Kuki = json.loads(Tezzaurl.text)
         kuki = Tezza['reply']
         sleep(0.3)
@@ -150,7 +150,7 @@ __help__ = """
 __mod_name__ = "CʜᴀᴛBᴏᴛ"
 
 
-CHATBOTK_HANDLER = CommandHandler("chatbot", Tezza)
+CHATBOTK_HANDLER = CommandHandler("chatbot", kuki)
 ADD_CHAT_HANDLER = CallbackQueryHandler(kukiadd, pattern=r"add_chat")
 RM_CHAT_HANDLER = CallbackQueryHandler(kukirm, pattern=r"rm_chat")
 CHATBOT_HANDLER = MessageHandler(
