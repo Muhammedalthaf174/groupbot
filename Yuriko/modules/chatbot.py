@@ -119,9 +119,9 @@ def chatbot(update: Update, context: CallbackContext):
         bot.send_chat_action(chat_id, action="typing")
         kukiurl = requests.get('https://www.kukiapi.xyz/api/apikey=KUKIg76Fg4EIo/botname/owner/message='+Message)
         Kuki = json.loads(Tezzaurl.text)
-        kuki = Tezza['reply']
+        kuki = kuki['reply']
         sleep(0.3)
-        message.reply_text(Tezza, timeout=60)
+        message.reply_text(kuki, timeout=60)
 
 def list_all_chats(update: Update, context: CallbackContext):
     chats = sql.get_all_kuki_chats()
