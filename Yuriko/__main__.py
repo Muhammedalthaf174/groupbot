@@ -84,7 +84,7 @@ yurikorobot_IMG = "https://telegra.ph/file/991a51eebd084fe53d2b9.jpg"
 PM_START_TEXT = """
 *Hello {} !*
 
-✪ *ɪ'ᴀᴍ ᴀ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ*
+✪ ɪ'ᴀᴍ ᴀ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ [⚡](https://te.legra.ph/file/e520067ac3c691abfe07d.jpg)
 ✪ *Aᴍ Vᴇʀʏ Fᴀꜱᴛ Aɴᴅ  Mᴏʀᴇ Eꜰꜰɪᴄɪᴇɴᴛ  I Pʀᴏᴠɪᴅᴇ Aᴡᴇꜱᴏᴍᴇ  Fᴇᴀᴛᴜʀᴇꜱ!*
 ────────────────────────
 × *Uᴘᴛɪᴍᴇ:* `{}`
@@ -111,23 +111,20 @@ buttons = [
         ),
     ],
     [
-        InlineKeyboardButton(text="Sᴜᴍᴍᴏɴ Mᴇ", url="http://t.me/tezza_groupBot?startgroup=true"),
+        InlineKeyboardButton(text="ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ", url="http://t.me/tezza_groupBot?startgroup=true"),
     ],
 ]
 
 
 HELP_STRINGS = """
-*✗ MAIN COMMANDS ✗*
+ᴍᴀɪɴ ᴄᴏᴍᴍᴀɴᴅs ᴛᴏ ʜᴇʀᴇ. [.](https://te.legra.ph/file/fc4783f9b757f71109dbe.jpg)"""
 
-✗ /start - `Starts me! Your probably already used this.`
-✗ /help - `Click this I ll let you know about myself!`
-✗ /settings - `in PM: will send you your settings for all supported modules.`
-✗ *In A Group: Will Redirect You To Pm With All That Chats Settings.*)"""
+HELP_MSG = "Click the button below to get help menu in your pm."
+DONATE_STRING = """Contact to **@Tezza_Robot**"""
+HELP_IMG = "https://te.legra.ph/file/dce2e3e278de5ca987bfc.jpg"
+GROUP_IMG = "https://te.legra.ph/file/dce2e3e278de5ca987bfc.jpg"
 
 
-
-DONATE_STRING = """Heya, glad to hear you want to donate!
- @PiroXPower's 💕"""
 
 IMPORTED = {}
 MIGRATEABLE = []
