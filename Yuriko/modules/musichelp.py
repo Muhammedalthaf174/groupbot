@@ -14,4 +14,5 @@ __help__ = """
 ❂ /pause - Pause the currently playing song.
 ❂ /resume - Resume the paused song.
 ❂ /end - stop the currently playing music.
+❂ /settings - Get settings dashboard.
 """
