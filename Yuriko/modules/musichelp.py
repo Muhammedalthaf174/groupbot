@@ -13,9 +13,5 @@ __help__ = """
 ❂ /skip - Play next song.
 ❂ /pause - Pause the currently playing song.
 ❂ /resume - Resume the paused song.
-❂ /msettings - To open panel settings on musicplayer.
-❂ /setadmin - To set all command only for admins.
-❂ /setmember - Set all command for all members.
-❂ /vol (range 1-200) - To set volume on voice calls.
 ❂ /end - stop the currently playing music.
 """
