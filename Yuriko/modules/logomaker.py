@@ -3,8 +3,8 @@ import random
 import glob
 from PIL import Image, ImageDraw, ImageFont
 from telethon.tl.types import InputMessagesFilterPhotos
-from Alakananda.events import register
-from Alakananda import telethn as tbot, ubot2
+from Yuriko.events import register
+from Yuriko import telethn as tbot, ubot2
 
 
 def mediainfo(media):
@@ -47,7 +47,8 @@ async def logo_gen(event):
     xx = await event.reply("`Preparing your logo...`")
     name = event.pattern_match.group(1)
     if not name:
-        await xx.edit("`Provide some text to draw!\nExample: /logo <your name>!`")
+        await xx.edit("`Provide some text to draw!
+Example: /logo <your name>!`")
         return
     bg_, font_ = "", ""
     if event.reply_to_msg_id:
@@ -68,7 +69,7 @@ async def logo_gen(event):
             pics.append(i)
         id_ = random.choice(pics)
         bg_ = await id_.download_media()
-        fpath_ = glob.glob("./Alakananda/resources/fonts/*")
+        fpath_ = glob.glob("./Yuriko/resources/fonts/*")
         font_ = random.choice(fpath_)
     if not bg_:
         pics = []
@@ -79,7 +80,7 @@ async def logo_gen(event):
         id_ = random.choice(pics)
         bg_ = await id_.download_media()
     if not font_:
-        fpath_ = glob.glob("./Alakananda/resources/fonts/*")
+        fpath_ = glob.glob("./Yuriko/resources/fonts/*")
         font_ = random.choice(fpath_)
     if len(name) <= 8:
         fnt_size = 120
@@ -121,7 +122,7 @@ async def logo_gen(event):
     if os.path.exists(bg_):
         os.remove(bg_) 
     if os.path.exists(font_):
-        if not font_.startswith("./Alakananda/resources/fonts"):
+        if not font_.startswith("./Yuriko/resources/fonts"):
             os.remove(font_)
 
 
@@ -151,7 +152,7 @@ async def logo_(event):
             pics.append(i)
         id_ = random.choice(pics)
         bg_ = await id_.download_media()
-        fpath_ = glob.glob("./Alakananda/resources/fonts/*")
+        fpath_ = glob.glob("./Yuriko/resources/fonts/*")
         font_ = random.choice(fpath_)
     if not bg_:
         pics = []
@@ -162,7 +163,7 @@ async def logo_(event):
         id_ = random.choice(pics)
         bg_ = await id_.download_media()
     if not font_:
-        fpath_ = glob.glob("./Alakananda/resources/fonts/*")
+        fpath_ = glob.glob("./Yuriko/resources/fonts/*")
         font_ = random.choice(fpath_)
     if len(name) <= 8:
         fnt_size = 105
@@ -204,18 +205,19 @@ async def logo_(event):
     if os.path.exists(bg_):
         os.remove(bg_) 
     if os.path.exists(font_):
-        if not font_.startswith("./Alakananda/resources/fonts"):
+        if not font_.startswith("./Yuriko/resources/fonts"):
             os.remove(font_)
 
 
-__mod_name__ = "Logomaker"
+__mod_name__ = "LᴏɢᴏMᴀᴋᴇʀ"
 
-__help__ = """ This is help menu for logomaker
+__help__ = """
 
-❂ /logo <text/name> - Create a logo with random view.
-❂ /wlogo <text/name> - Create a logo with wide view only.
+❂ /logo - `<text/name> Create a logo with random view.`
 
- Image Editor :
+❂ /wlogo - `<text/name> Create a logo with wide view only.`
 
-❂  /edit <reply photo> - to edit image.
+ *Image Editor :*
+
+❂ /edit - `<reply photo> to edit image.`
 """
