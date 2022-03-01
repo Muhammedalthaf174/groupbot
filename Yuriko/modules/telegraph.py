@@ -2,22 +2,20 @@
 # I give credit for this module to YuiGBot.
 
 from Yuriko.events import register
-from Yuriko import telethn
-
+from Yuriko import telethn as tbot
 TMP_DOWNLOAD_DIRECTORY = "./"
-from telethon import events
+from telethon import events, Button, custom
 import os
 from PIL import Image
 from datetime import datetime
 from telegraph import Telegraph, upload_file, exceptions
-
-wibu = "Yuriko"
+shu = "SHU"
 telegraph = Telegraph()
-r = telegraph.create_account(short_name=wibu)
+r = telegraph.create_account(short_name=shu)
 auth_url = r["auth_url"]
 
 
-@register(pattern="^/t(gm|gt) ?(.*)")
+@register(pattern="^/t(m|xt) ?(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -26,14 +24,14 @@ async def _(event):
         start = datetime.now()
         r_message = await event.get_reply_message()
         input_str = event.pattern_match.group(1)
-        if input_str == "gm":
-            downloaded_file_name = await telethn.download_media(
+        if input_str == "m":
+            downloaded_file_name = await tbot.download_media(
                 r_message,
                 TMP_DOWNLOAD_DIRECTORY
             )
             end = datetime.now()
             ms = (end - start).seconds
-            h = await event.reply("Downloaded to {} in {} seconds.".format(downloaded_file_name, ms))
+            h = await event.reply("Downloaded {} in {} seconds.".format(downloaded_file_name, ms))
             if downloaded_file_name.endswith((".webp")):
                 resize_image(downloaded_file_name)
             try:
@@ -44,11 +42,13 @@ async def _(event):
                 os.remove(downloaded_file_name)
             else:
                 end = datetime.now()
+                BUTTON = [[Button.url("Telegraph", f"https://telegra.ph/{media_urls[0]}")]]
                 ms_two = (end - start).seconds
                 os.remove(downloaded_file_name)
-                await h.edit("Uploaded to https://telegra.ph{}".format(media_urls[0], (ms + ms_two)), link_preview=True)
-        elif input_str == "gt":
-            user_object = await telethn.get_entity(r_message.sender_id)
+                await h.delete()
+                await event.reply("Uploaded to [Telegraph](https://telegra.ph{})".format(media_urls[0]), link_preview=True, buttons=BUTTON)
+        elif input_str == "xt":
+            user_object = await tbot.get_entity(r_message.sender_id)
             title_of_page = user_object.first_name # + " " + user_object.last_name
             # apparently, all Users do not have last_name field
             if optional_title:
@@ -57,7 +57,7 @@ async def _(event):
             if r_message.media:
                 if page_content != "":
                     title_of_page = page_content
-                downloaded_file_name = await telethn.download_media(
+                downloaded_file_name = await tbot.download_media(
                     r_message,
                     TMP_DOWNLOAD_DIRECTORY
                 )
@@ -74,7 +74,7 @@ async def _(event):
             )
             end = datetime.now()
             ms = (end - start).seconds
-            await event.reply("Pasted to https://telegra.ph/{}".format(response["path"], ms), link_preview=True)
+            await event.reply("Pasted to [Telegraph](https://telegra.ph/{}) in {} seconds.".format(response["path"], ms), link_preview=True, buttons=BUTTON)
     else:
         await event.reply("Reply to a message to get a permanent telegra.ph link.")
 
@@ -82,10 +82,6 @@ async def _(event):
 def resize_image(image):
     im = Image.open(image)
     im.save(image, "PNG")
-
-file_help = os.path.basename(__file__)
-file_help = file_help.replace(".py", "")
-file_helpo = file_help.replace("_", " ")
 
 
 help = """
