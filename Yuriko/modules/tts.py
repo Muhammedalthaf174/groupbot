@@ -1,5 +1,5 @@
 from Yuriko.events import register
-from Alakananda import telethn as tbot
+from Yuriko import telethn as tbot
 TMP_DOWNLOAD_DIRECTORY = "./"
 from telethon import events, Button, custom
 import os
