@@ -47,8 +47,7 @@ async def logo_gen(event):
     xx = await event.reply("`Preparing your logo...`")
     name = event.pattern_match.group(1)
     if not name:
-        await xx.edit("`Provide some text to draw!
-Example: /logo <your name>!`")
+        await xx.edit("`Provide some text to draw!\nExample: /logo <your name>!`")
         return
     bg_, font_ = "", ""
     if event.reply_to_msg_id:
