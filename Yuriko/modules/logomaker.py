@@ -113,7 +113,7 @@ async def logo_gen(event):
         await tbot.send_file(
             event.chat_id,
             file=flnme,
-            caption="Logo by [ᴛᴇᴢᴢᴀ ʙᴏᴛ](https://t.me/tezza_robot)",
+            caption="Logo by [Tezza Robot](https://t.me/Tezza_Robot)",
             force_document=False,
         )
         os.remove(flnme)
@@ -196,7 +196,7 @@ async def logo_(event):
         await tbot.send_file(
             event.chat_id,
             file=flnme,
-            caption="Logo by [ᴛᴇᴢᴢᴀ ʙᴏᴛ](https://t.me/tezza_robot)",
+            caption="Logo by [Tezza Robot](https://t.me/Tezza_Robot)",
             force_document=False,
         )
         os.remove(flnme)
@@ -208,15 +208,14 @@ async def logo_(event):
             os.remove(font_)
 
 
-__mod_name__ = "LᴏɢᴏMᴀᴋᴇʀ"
+__mod_name__ = "Logomaker"
 
-__help__ = """
+__help__ = """ This is help menu for logomaker
 
-❂ /logo - `<text/name> Create a logo with random view.`
+❂ /logo <text/name> - Create a logo with random view.
+❂ /wlogo <text/name> - Create a logo with wide view only.
 
-❂ /wlogo - `<text/name> Create a logo with wide view only.`
+ Image Editor :
 
- *Image Editor :*
-
-❂ /edit - `<reply photo> to edit image.`
+❂  /edit <reply photo> - to edit image.
 """
