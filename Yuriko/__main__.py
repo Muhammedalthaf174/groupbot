@@ -247,7 +247,7 @@ def start(update: Update, context: CallbackContext):
         reply_markup=InlineKeyboardMarkup(
                 [
                   [
-                  InlineKeyboardButton(text="✧ Support ", url=f"https://t.me/milnabotsgroup{SUPPORT_CHAT}"),
+                  InlineKeyboardButton(text="✧ Support ", url=f"https://telegram.dog/{SUPPORT_CHAT}"),
                   InlineKeyboardButton(text="✧ Updates ", url=f"t.me/milnabotchannel/14"),
                   ]
                 ]
