@@ -1,6 +1,3 @@
-# This file is part of YuiGBot (Telegram Bot)
-# I give credit for this module to YuiGBot.
-
 from Yuriko.events import register
 from Yuriko import telethn as tbot
 TMP_DOWNLOAD_DIRECTORY = "./"
@@ -84,9 +81,9 @@ def resize_image(image):
     im.save(image, "PNG")
 
 
-help = """
+__help__ = """
  ❍ /tm :Get Telegraph Link Of Replied Media
  ❍ /txt :Get Telegraph Link of Replied Text
 """
 
-mod_name = "Telegraph"
+__mod_name__ = "Telegraph"
