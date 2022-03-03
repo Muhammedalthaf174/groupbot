@@ -122,14 +122,14 @@ async def alive_function(answers):
     )
 
     msg = f"""
-**[Yuriko Robot ❤️](https://t.me/decodesupport):**
+**[Yuriko Robot ❤️](http://telegra.ph/file/0adf9e97735ba8a420973.jpg):**
 **MainBot:** `{bot_state}`
 **UserBot:** `{ubot_state}`
 **Python:** `{pyver.split()[0]}`
 **Pyrogram:** `{pyrover}`
 **MongoDB:** `{mongover}`
 **Platform:** `{sys.platform}`
-**Profiles:** [BOT](t.me/{BOT_USERNAME}) | [UBOT](t.me/TeamDeeCode)
+**Profiles:** [BOT](t.me/{BOT_USERNAME}) | [Owner](t.me/DeepakJack007) 
 """
     answers.append(
         InlineQueryResultArticle(
