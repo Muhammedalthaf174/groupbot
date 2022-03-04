@@ -8,10 +8,10 @@ from Yuriko import telethn as aasf
 from Yuriko.events import register 
 
 edit_time = 5
-Shu1 = "https://telegra.ph/file/40ca0a2c3b56ab76c2536.jpg"
-Shu2 = "https://te.legra.ph/file/9df146a1a8cfdcfc48057.jpg"
+Shu1 = "https://telegra.ph/file/0533c03077089c1888aca.jpg"
+Shu2 = "https://te.legra.ph/file/fdd4730f27038b6a25a82.jpg"
 Shu3 = "https://te.legra.ph/file/dce2e3e278de5ca987bfc.jpg"
-Shu4 = "https://te.legra.ph/file/fdd4730f27038b6a25a82.jpg"
+Shu4 = "https://te.legra.ph/file/9df146a1a8cfdcfc48057.jpg"
 
 @register(pattern="/myinfo")
 async def proboyx(event):
