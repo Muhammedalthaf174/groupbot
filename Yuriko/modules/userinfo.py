@@ -32,7 +32,7 @@ from Yuriko import (
     SUPPORT_CHAT,
 )
 from Yuriko.__main__ import STATS, TOKEN, USER_INFO
-from Yuriko.modules.sql import SESSION
+fromYuriko.modules.sql import SESSION
 import Yuriko.modules.sql.userinfo_sql as sql
 from Yuriko.modules.disable import DisableAbleCommandHandler
 from Yuriko.modules.sql.global_bans_sql import is_user_gbanned
@@ -41,6 +41,9 @@ from Yuriko.modules.sql.users_sql import get_user_num_chats
 from Yuriko.modules.helper_funcs.chat_status import sudo_plus
 from Yuriko.modules.helper_funcs.extraction import extract_user
 from Yuriko import telethn
+from Yuriko import SUPPORT_CHAT
+
+SHU = "https://te.legra.ph/file/dce2e3e278de5ca987bfc.jpg"
 
 def no_by_per(totalhp, percentage):
     """
@@ -315,8 +318,8 @@ def info(update: Update, context: CallbackContext):
     elif user.id in WOLVES:
         text += "\n\nThe Disaster level of this person is 'Soldier'."
         disaster_level_present = True
-    elif user.id == 1829047705:
-         text += "\n\nOwner Of A Bot. Queen Of @excrybaby. Bot Name Inspired From 'JoJo'."
+    elif user.id == 1151132400:
+         text += "\n\nOwner Of A Bot. Queen Of @Alakananda. Bot Name Inspired From 'JoJo'."
          disaster_level_present = True
 
     try:
@@ -353,9 +356,9 @@ def info(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                "Health", url="https://t.me/YurikoLogger/5"),
+                                "🌡️Health🌡️", url="https://t.me/milnabotlogs/396"),
                             InlineKeyboardButton(
-                                "Disaster", url="https://t.me/YurikoLogger/6")
+                                "⚡Disaster⚡", url="https://t.me/milnabotlogs/397")
                         ],
                     ]
                 ),
@@ -371,9 +374,9 @@ def info(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                "Health", url="https://t.me/YurikoLogger/5"),
+                                "🌡️Health🌡️", url="https://t.me/milnabotlogs/396"),
                             InlineKeyboardButton(
-                                "Disaster", url="https://t.me/YurikoLogger/6")
+                                "⚡Disaster⚡", url="https://t.me/milnabotlogs/397")
                         ],
                     ]
                 ),
@@ -445,15 +448,24 @@ def set_about_me(update: Update, context: CallbackContext):
 
 @sudo_plus
 def stats(update: Update, context: CallbackContext):
-    stats = "<b>╔═━「 Current Yuriko's Statistics 」</b>\n" + "\n".join([mod.__stats__() for mod in STATS])
+    stats = "<b>╔═━「 Current 𝑻𝒆𝒛𝒛𝒂❥︎ Statistics 」</b>\n" + "\n".join([mod.__stats__() for mod in STATS])
     result = re.sub(r"(\d+)", r"<code>\1</code>", stats)
-    update.effective_message.reply_text(
-        result,
-        parse_mode=ParseMode.HTML, 
-        disable_web_page_preview=True
-   )
-        
-        
+    result += "\n<b>╘═━「 Powered By @Tezza_Robot」</b>"
+    update.effective_message.reply_photo(
+        SHU,caption=result, 
+        reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton(
+                                "Support", url=f"https://t.me/{SUPPORT_CHAT}"),
+                            InlineKeyboardButton(
+                                "Updates", url=f"https://t.me/milnabotsgroup")
+                        ],
+                    ]
+                ),
+                parse_mode=ParseMode.HTML,
+            )
+               
 def about_bio(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
     message = update.effective_message
@@ -539,55 +551,36 @@ def __user_info__(user_id):
 
 __help__ = """
 *ID:*
-✗ /id - `get the current group id. If used by replying to a message, gets that user's id.`
-
-✗ /gifid - `reply to a gif to me to tell you its file ID.`
+❂ /id*:* get the current group id. If used by replying to a message, gets that user's id.
+❂ /gifid*:* reply to a gif to me to tell you its file ID.
  
 *Self addded information:* 
-
-✗ /setme - `<text> will set your info.`
-
-✗ /me - `will get your or another user's info.`
-
+❂ /setme <text>*:* will set your info
+❂ /me*:* will get your or another user's info.
 Examples:
-
-✗ /setme - `I am a` *DᴇCᴏᴅᴇ* `Member.`
-
-✗ /me - `@username(defaults to yours if no user specified)`
+❂ /setme I am a wolf.
+❂ /me @username(defaults to yours if no user specified)
  
 *Information others add on you:* 
-
-✗ /bio - `will get your or another user's bio. This cannot be set by yourself.`
-
-✗ /setbio - `<text> while replying, will save another user's bio`
-
-*Examples:*
-
-✗ /bio - `@username(defaults to yours if not specified).`
-
-✗ /setbio - `This user is a` *DᴇCᴏᴅᴇ* `Member (reply to the user)`
+❂ /bio*:* will get your or another user's bio. This cannot be set by yourself.
+❂ /setbio <text>*:* while replying, will save another user's bio 
+Examples:
+❂ /bio @username(defaults to yours if not specified).
+❂ /setbio This user is a wolf (reply to the user)
  
 *Overall Information about you:*
-
-✗ /info - `get information about a user.`
+❂ /info*:* get information about a user. 
  
 *json Detailed info:*
-
-✗ /json - `Get Detailed info about any message.`
+❂ /json*:* Get Detailed info about any message.
  
 *AFk:*
-
-`When marked as AFK, any mentions will be replied to with a message stating that you're not available!`
-
-✗ /afk - `<reason> Mark yourself as AFK.`
-
-  brb - `<reason> Same as the afk command, but not a command.` 
-
+When marked as AFK, any mentions will be replied to with a message stating that you're not available!
+❂ /afk <reason>*:* Mark yourself as AFK.
+  - brb <reason>: Same as the afk command, but not a command. 
+  
 *What is that health thingy?*
-
- `Come and see` [HP System explained](https://t.me/YurikoLogger/5)
-
-*✗ Pᴏᴡᴇʀᴇᴅ 💕 Bʏ: Tᴇᴀᴍ DᴇCᴏᴅᴇ!*
+ Come and see [HP System explained](https://t.me/KennedyProject/44)
 """
 
 SET_BIO_HANDLER = DisableAbleCommandHandler("setbio", set_about_bio, run_async=True)
@@ -610,7 +603,7 @@ dispatcher.add_handler(GET_BIO_HANDLER)
 dispatcher.add_handler(SET_ABOUT_HANDLER)
 dispatcher.add_handler(GET_ABOUT_HANDLER)
 
-__mod_name__ = "Iɴꜰᴏ & Aꜰᴋ"
+__mod_name__ = "Info & AFK"
 __command_list__ = ["setbio", "bio", "setme", "me", "info"]
 __handlers__ = [
     ID_HANDLER,
