@@ -32,7 +32,7 @@ from Yuriko import (
     SUPPORT_CHAT,
 )
 from Yuriko.__main__ import STATS, TOKEN, USER_INFO
-fromYuriko.modules.sql import SESSION
+from Yuriko.modules.sql import SESSION
 import Yuriko.modules.sql.userinfo_sql as sql
 from Yuriko.modules.disable import DisableAbleCommandHandler
 from Yuriko.modules.sql.global_bans_sql import is_user_gbanned
