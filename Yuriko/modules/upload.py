@@ -83,7 +83,7 @@ async def tsh(event):
 
             str(time.time() - start)
             await orta.edit(
-                f"File Successfully Uploaded to TransferSh.\n\nLink 👉 {download_link}\nExpired Date 👉 {final_date}\n\nUploaded by *AsunaRobot*"
+                f"File Successfully Uploaded to TransferSh.\n\nLink 👉 {download_link}\nExpired Date 👉 {final_date}\n\nUploaded by *Alakananda*"
             )
         except Exception as e:
             traceback.print_exc()
@@ -93,7 +93,7 @@ async def tsh(event):
     raise events.StopPropagation
 
 
-@bot.on(events.NewMessage(pattern="/tmpninja"))
+@bot.on(events.NewMessage(pattern="/tmshukurenai"))
 async def tmp(event):
     if event.reply_to_msg_id:
         start = time.time()
@@ -113,12 +113,12 @@ async def tmp(event):
         await ilk.delete()
 
         try:
-            orta = await event.respond("Uploading to TmpNinja...")
+            orta = await event.respond("Uploading to Alakananda...")
             download_link = await send_to_tmp_async(file_path)
 
             str(time.time() - start)
             await orta.edit(
-                f"File Successfully Uploaded to TmpNinja.\n\nLink 👉 {download_link}\n\nUploaded by *AsunaRobot*"
+                f"File Successfully Uploaded to Alakananda.\n\nLink 👉 {download_link}\n\nUploaded by *Alakananda*"
             )
         except Exception as e:
             traceback.print_exc()
@@ -159,7 +159,7 @@ async def up(event):
                 event.chat.id,
                 dosya,
                 force_document=True,
-                caption=f"Uploaded By *AsunaRobot*",
+                caption=f"Uploaded By *Alakananda*",
             )
         except Exception as e:
             traceback.print_exc()
