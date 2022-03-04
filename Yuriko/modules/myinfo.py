@@ -8,15 +8,15 @@ from Yuriko import telethn as aasf
 from Yuriko.events import register 
 
 edit_time = 5
-Shu1 = "https://telegra.ph/file/8ff4d6113d48cb904e731.jpg"
-Shu2 = "https://telegra.ph/file/8ff4d6113d48cb904e731.jpg"
-Shu3 = "https://telegra.ph/file/8ff4d6113d48cb904e731.jpg"
-Shu4 = "https://telegra.ph/file/8ff4d6113d48cb904e731.jpg"
+Shu1 = "https://telegra.ph/file/40ca0a2c3b56ab76c2536.jpg"
+Shu2 = "https://te.legra.ph/file/9df146a1a8cfdcfc48057.jpg"
+Shu3 = "https://te.legra.ph/file/dce2e3e278de5ca987bfc.jpg"
+Shu4 = "https://te.legra.ph/file/fdd4730f27038b6a25a82.jpg"
 
 @register(pattern="/myinfo")
 async def proboyx(event):
   button = [[custom.Button.inline("CHECK",data="information")]]
-  on = await aasf.send_message(event.chat, f"**❦ Hᴇʏ {(event.sender.first_name)}**\n\n**❦ I AM YOUR FRIEND [《ᴤᴛᴲᴎᴣᴌᴇ᚛〄᚜ᴹᴀᴙᴉᴀ》](https://t.me/Stenzle_MariaGbot)**\n**❦ I Wᴀs Cʀᴇᴀᴛᴇᴅ Bʏ [《ᴤᴛᴲᴎᴣᴌᴇ᚛〄᚜ᴹᴀᴙᴉᴀ》Team](t.me/stenzle_appeal_chat)**", file=Shu1, buttons=button)
+  on = await aasf.send_message(event.chat, f"**❦ Hᴇʏ {(event.sender.first_name)}**\n\n**❦ I AM YOUR FRIEND [𝑻𝒆𝒛𝒛𝒂❥︎](https://t.me/Tezza_Robot)**\n**❦ I Wᴀs Cʀᴇᴀᴛᴇᴅ Bʏ [𝑻𝒆𝒛𝒛𝒂❥︎ Team](t.me/milnabotsgroup)**", file=Shu1, buttons=button)
 
   await asyncio.sleep(edit_time)
   ok = await aasf.edit_message(event.chat_id, on, file=Shu2, buttons=button) 
@@ -44,7 +44,7 @@ async def callback_query_handler(event):
   try:
     boy = event.sender_id
     PRO = await bot.get_entity(boy)
-    SHU = "YOUR DETAILS BY 《ᴤᴛᴲᴎᴣᴌᴇ᚛〄᚜ᴹᴀᴙᴉᴀ》 \n"
+    SHU = "YOUR DETAILS BY 𝑻𝒆𝒛𝒛𝒂❥︎ \n"
     SHU += f"FIRST NAME : {PRO.first_name} \n"
     SHU += f"LAST NAME : {PRO.last_name}\n"
     SHU += f"YOU BOT : {PRO.bot} \n"
