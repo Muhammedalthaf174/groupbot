@@ -111,7 +111,7 @@ buttons = [
                              url=f"https://t.me/{SUPPORT_CHAT}"),
                        InlineKeyboardButton(
                              text="Updates🛰️",
-                             url=f"https://t.me/milnabotchannel/14"),
+                             url=f"https://t.me/tezzasupportchannel/14"),
     ],
 
 ]
@@ -248,7 +248,7 @@ def start(update: Update, context: CallbackContext):
                 [
                   [
                   InlineKeyboardButton(text="✧ Support ", url=f"https://telegram.dog/{SUPPORT_CHAT}"),
-                  InlineKeyboardButton(text="✧ Updates ", url=f"t.me/milnabotchannel/14"),
+                  InlineKeyboardButton(text="✧ Updates ", url=f"t.me/tezzasupportchannel/14"),
                   ]
                 ]
             ),
@@ -463,8 +463,8 @@ def shukurenai_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Support", url="t.me/milnabotsgroup"),
-                    InlineKeyboardButton(text="Updates", url="https://t.me/milnabotchannel/14"),
+                    InlineKeyboardButton(text="Support", url="t.me/tezzasupportgroup"),
+                    InlineKeyboardButton(text="Updates", url="https://t.me/tezzasupportchannel/14"),
                  ],
                  [
                     InlineKeyboardButton(text="Go Back", callback_data="shukurenai_"),
@@ -808,10 +808,10 @@ def main():
                   [                  
                        InlineKeyboardButton(
                              text="Support🚑",
-                             url=f"https://t.me/milnabotsgroup"),
+                             url=f"https://t.me/tezzasupportchannel"),
                        InlineKeyboardButton(
                              text="Updates🛰️",
-                             url="https://t.me/milnabotchannel")
+                             url="https://t.me/tezzasupportchannel")
                      ] 
                 ]
             ),
